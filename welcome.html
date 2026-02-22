@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Nikita Jindal | Pediatrician</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #4a9fff;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .hero {
+            padding: 60px 0;
+            background-color: #e8f4ff;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff9e4a;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #ff8c2a;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #4a9fff;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .doctor-profile {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .doctor-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .doctor-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .doctor-info {
+            flex: 2;
+        }
+        
+        .doctor-info h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .doctor-info .specialty {
+            color: #4a9fff;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .doctor-info p {
+            margin-bottom: 15px;
+        }
+        
+        .qualifications {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .qualifications li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .qualifications li:before {
+            content: "✓";
+            color: #4a9fff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .practices {
+            background-color: #f0f8ff;
+        }
+        
+        .practices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .practice-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .practice-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .practice-icon {
+            font-size: 2.5rem;
+            color: #4a9fff;
+            margin-bottom: 20px;
+        }
+        
+        .practice-card h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .reviews {
+            background-color: white;
+        }
+        
+        .review-form {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .review-form h3 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .rating {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .star {
+            font-size: 1.5rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .star:hover,
+        .star.active {
+            color: #ffc107;
+        }
+        
+        .reviews-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .review-item {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 5px solid #4a9fff;
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        
+        .reviewer-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .review-date {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .review-rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+        
+        .review-content {
+            color: #555;
+        }
+        
+        .no-reviews {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .doctor-profile {
+                flex-direction: column;
+            }
+            
+            .doctor-image {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Dr. Nikita Jindal</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#practices">Practices</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Pediatric Care with Compassion</h1>
+            <p>Welcome to the practice of Dr. Nikita Jindal, a dedicated pediatrician providing healthcare for children from infancy through adolescence.</p>
+            <a href="#about" class="btn">Learn More About Dr. Jindal</a>
+        </div>
+    </section>
+
+    <!-- About Doctor -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Dr. Nikita Jindal</h2>
+            
+            <div class="doctor-profile">
+                <div class="doctor-image">
+                    <img src="doctornj.jpeg" alt="Dr. Nikita Jindal">
+                </div>
+                
+                <div class="doctor-info">
+                    <h2>Dr. Nikita Jindal, MD, DNB</h2>
+                    <div class="specialty">Pediatrician</div>
+                    <p>With over 7 years of experience in pediatric medicine, Dr. Nikita Jindal is dedicated to providing comprehensive care for children of all ages including newborns. </p>
+                    <p>Dr Nikita completed her medical degree from Maulana Azad Medical College. She has a rationale approach to all cases, stays current with the latest advancements in pediatric medicine and does not encourage unnecessary investigations.</p>
+                    <p>Dr Nikita believes in building strong relationships with her patients and their families, taking the time to listen to concerns and explain conditions and treatments in understandable terms.</p>
+                    
+                    <ul class="qualifications">
+                        <li>MBBS, Murshidabad Medical College & Hospital</li>
+                        <li>MD Paediatrics, Maulana Azad Medical College, New Delhi</li>
+                        <li>DNB Paediatrics, National Board of Examination</li>
+                        <li>Paediatric Senior Residency, Maulana Azad Medical College & associated Lok Nayak Hospital</li>
+                        <li>7+ years of experience in neonatology and paediatric patient care</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practices -->
+    <section class="practices" id="practices">
+        <div class="container">
+            <h2 class="section-title">Medical Practices & Specializations</h2>
+            
+            <div class="practices-grid">
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Newborn & Infant Care</h3>
+                    <p>Comprehensive care for newborns including well-baby checkups, feeding guidance, developmental screenings, and parental education.</p>
+                </div>
+                
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h3>Vaccinations & Immunizations</h3>
+                    <p>Information about our vaccination approach and preventive care guidelines will be available here soon.</p>
+                </div>
+                
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Sick Child Visits</h3>
+                    <p>Evaluation and treatment for common childhood illnesses, infections, and injuries with same-day appointments when needed.</p>
+                </div>
+                
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Well-Child Checkups</h3>
+                    <p>Regular developmental assessments, growth monitoring, and preventive care tailored to each stage of your child's growth.</p>
+                </div>
+                
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-allergies"></i>
+                    </div>
+                    <h3>Allergy & Asthma</h3>
+                    <p>Diagnosis and management of allergies, asthma, and other respiratory conditions common in children.</p>
+                </div>
+                
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Developmental Screening</h3>
+                    <p>Early identification and intervention for developmental delays, learning difficulties, and behavioral concerns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title">Patient Reviews</h2>
+            
+            <!-- Review Form -->
+            <div class="review-form">
+                <h3>Share Your Experience</h3>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="reviewerName">Your Name</label>
+                        <input type="text" id="reviewerName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Your Rating</label>
+                        <div class="rating" id="ratingStars">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <input type="hidden" id="ratingValue" value="0" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewTitle">Review Title</label>
+                        <input type="text" id="reviewTitle" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewText">Your Review</label>
+                        <textarea id="reviewText" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">Submit Review</button>
+                </form>
+            </div>
+            
+            <!-- Reviews List -->
+            <div class="reviews-list" id="reviewsList">
+                <!-- Reviews will be added here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Kolkata, India</p>
+                <p><i class="fas fa-phone"></i> 9163145453</p>
+                <p><i class="fas fa-envelope"></i> jindalniki02@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Thurs-Sat: 9am-12pm: Vijaya Diagnostic Centre VIP Road | Fri: 1pm-2pm: Suraksha Laketown</p>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Dr. Nikita Jindal, Pediatrician. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize empty reviews array
+        let reviews = JSON.parse(localStorage.getItem('doctorReviews')) || [];
+
+        // Render reviews
+        function renderReviews() {
+            const reviewsList = document.getElementById('reviewsList');
+            reviewsList.innerHTML = '';
+            
+            // Check if there are no reviews
+            if (reviews.length === 0) {
+                reviewsList.innerHTML = `
+                    <div class="no-reviews">
+                        <p>No reviews yet. Be the first to share your experience with Dr. Jindal!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Sort reviews by date (newest first)
+            reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            reviews.forEach(review => {
+                const reviewElement = document.createElement('div');
+                reviewElement.className = 'review-item';
+                
+                // Create stars HTML
+                let starsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    starsHtml += i <= review.rating ? '★' : '☆';
+                }
+                
+                // Format date
+                const date = new Date(review.date);
+                const formattedDate = date.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                
+                reviewElement.innerHTML = `
+                    <div class="review-header">
+                        <div class="reviewer-name">${review.name}</div>
+                        <div class="review-date">${formattedDate}</div>
+                    </div>
+                    <div class="review-rating">${starsHtml}</div>
+                    <h4>${review.title}</h4>
+                    <div class="review-content">${review.content}</div>
+                `;
+                
+                reviewsList.appendChild(reviewElement);
+            });
+        }
+
+        // Star rating functionality
+        const ratingStars = document.querySelectorAll('.star');
+        const ratingValue = document.getElementById('ratingValue');
+        
+        ratingStars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                ratingValue.value = value;
+                
+                // Update star display
+                ratingStars.forEach(s => {
+                    s.classList.remove('active');
+                    if (parseInt(s.getAttribute('data-value')) <= value) {
+                        s.classList.add('active');
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseover', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                
+                ratingStars.forEach(s => {
+                    s.classList.remove('active');
+                    if (parseInt(s.getAttribute('data-value')) <= value) {
+                        s.classList.add('active');
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseout', function() {
+                const currentValue = parseInt(ratingValue.value);
+                
+                ratingStars.forEach(s => {
+                    s.classList.remove('active');
+                    if (parseInt(s.getAttribute('data-value')) <= currentValue) {
+                        s.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Handle review form submission
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('reviewerName').value;
+            const rating = parseInt(document.getElementById('ratingValue').value);
+            const title = document.getElementById('reviewTitle').value;
+            const content = document.getElementById('reviewText').value;
+            
+            if (rating === 0) {
+                alert('Please select a rating');
+                return;
+            }
+            
+            // Create new review
+            const newReview = {
+                id: reviews.length + 1,
+                name: name,
+                rating: rating,
+                title: title,
+                content: content,
+                date: new Date().toISOString().split('T')[0] // Today's date in YYYY-MM-DD format
+            };
+            
+            // Add to reviews array
+            reviews.unshift(newReview);
+            
+            // Save to localStorage
+            localStorage.setItem('doctorReviews', JSON.stringify(reviews));
+            
+            // Re-render reviews
+            renderReviews();
+            
+            // Reset form
+            this.reset();
+            ratingValue.value = 0;
+            ratingStars.forEach(star => star.classList.remove('active'));
+            
+            // Show confirmation
+            alert('Thank you for your review! It has been submitted successfully.');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderReviews();
+        });
+    </script>
+</body>
+</html>
